@@ -3,7 +3,7 @@ local vehlist = {}
 
 
 
-ESX.RegisterServerCallback('esx_vehicleshop:buyVehicle', function(source, cb, model, price, plate, color,pos)
+ESX.RegisterServerCallback('esx_vehicleshop:buyVehicle', function(source, cb, model, price, plate, color,pos, heading)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local modelPrice = price
 
@@ -12,7 +12,7 @@ ESX.RegisterServerCallback('esx_vehicleshop:buyVehicle', function(source, cb, mo
 		MySQL.insert('INSERT INTO owned_vehicles (owner, plate, vehicle) VALUES (?, ?, ?)', {xPlayer.identifier, plate, json.encode({model = model, plate = plate, color1 = color})
 		}, function(rowsChanged)
 			xPlayer.showNotification(TranslateCap('vehicle_belongs', plate))
-			ESX.OneSync.SpawnVehicle(model, pos, Config.SpawnHeading,{plate = plate, color1 = color}, function(vehicle)
+			ESX.OneSync.SpawnVehicle(model, pos, heading,{plate = plate, color1 = color}, function(vehicle)
 				Wait(100)
 				local vehicle = NetworkGetEntityFromNetworkId(vehicle)
 				Wait(300)
@@ -25,7 +25,7 @@ ESX.RegisterServerCallback('esx_vehicleshop:buyVehicle', function(source, cb, mo
 		MySQL.insert('INSERT INTO owned_vehicles (owner, plate, vehicle) VALUES (?, ?, ?)', {xPlayer.identifier, plate, json.encode({model = model, plate = plate, color1 = color})
 		}, function(rowsChanged)
 			xPlayer.showNotification(TranslateCap('vehicle_belongs', plate))
-			ESX.OneSync.SpawnVehicle(model, pos, Config.SpawnHeading,{plate = plate, color1 = color}, function(vehicle)
+			ESX.OneSync.SpawnVehicle(model, pos, heading,{plate = plate, color1 = color}, function(vehicle)
 				Wait(100)
 				local vehicle = NetworkGetEntityFromNetworkId(vehicle)
 				Wait(300)

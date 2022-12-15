@@ -1,18 +1,18 @@
 Config = {}
 
+Config.Locale = "en"
+Config.PlateUseSpace = true          --Spacer Between Letters and Numbers
+Config.PlateLetters  = 3             -- Letters on Plate    [LFP] 123
+Config.PlateNumbers  = 3             -- Numbers on Plate    LFP [123]
 
 
-Config.Locale = "de"
-Config.PlateUseSpace = true
-Config.PlateLetters  = 3
-Config.PlateNumbers  = 3
-Config.SpawnHeading = 112.71
-
+--Stores You can Create Limitless Stores.
 Config.CarDealer = { 
     { 
         name = "Autohaus",
         coords = vector3(-34.63,-1676.08,29.49),
         spawnpos = vector3(-26.98,-1679.63,29.45),
+        spawnHeading = 112.71,
         blips = {
             type = 225,
             color = 1,
@@ -67,6 +67,7 @@ Config.CarDealer = {
         name = "Bike Store",
         coords = vector3(-141.49,6354.39,31.49),
         spawnpos = vector3(-141.17,6353.34,31.49),
+        spawnHeading = 112.71,
         blips = {
             type = 226,
             color = 1,
@@ -131,5 +132,6 @@ Config.CarDealer = {
             },
         } 
     },
-
 }
+
+

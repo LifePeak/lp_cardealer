@@ -115,11 +115,12 @@ We're currently supporting this platforms if you have any Questions regarding Li
 
 
 
-# lp_speedcamera
+# lp_cardealer
 
-lp_speedcamera is an simple all in one speedcamera system for fivem.
-You can configurate Stationary and mobile speed cameras
-You can lock/unlock and share your key with your frends.
+The script is designed to be user-friendly and intuitive, 
+with a simple interface that allows players to quickly browse the available cars and make their purchases. 
+The script also allows to create unlimted  dealerships. Overall,
+the LifePeak CarDealer script adds an exciting and immersive element to the gameplay experience.
 
 
 
@@ -129,39 +130,60 @@ You can lock/unlock and share your key with your frends.
 2. Before you start you should read the config.lua and make changes if necessary.
    ```lua
    Config = {}
-   Config.Locale = "de"
-   Config.Billing = "none"                     -- Change your Billing System -> "esx_billing" / "okokBilling" / "none"
-   Config.BillingAmount = 5                    -- Amount per Km/H
-   Config.Society = "police"                   -- Billing Society / Create Speedcamera - Policejob
-   Config.PolicePay = true                     -- Can police officers be fined true/false
-   Config.CreateSpeedCamera = "spccreate"      -- Command to create a SpeedCamera
-   Config.DeleteSpeedCamera = "spcdelete"      -- Command to delete a SpeedCamera
-   -- Blips
-   Config.Blips = {
-    ShowBlip = true,                        -- Speedcamera Blips on Map
-    BlipName = "Speedcamera",               -- Name for Blip
-    BlipScale = 0.5,
-    BlipColour = 2,
-    BlipSprite = 184
-    }
-    -- Speedcameras
-    Config.Locations = {
-        [1] = {
-            SpeedCameraName = "Highway Point",
-            MaxKmH  = 130,
-            Position = vector3(1437.810546875,752.94683837891,77.623649597168)
-            },
-        [2] = {
-            SpeedCameraName = "Highway 23 South",
-            MaxKmH  = 130,
-            Position = vector3(-2485.4990234375,-218.81741333008,17.860759735107)
-            }
-    }
+
+   Config.Locale = "en"
+   Config.PlateUseSpace = true          --Spacer Between Letters and Numbers
+   Config.PlateLetters  = 3             -- Letters on Plate    [LFP] 123
+   Config.PlateNumbers  = 3             -- Numbers on Plate    LFP [123]
    
+   Config.CarDealer = {
+    {
+        name = "Autohaus",
+        coords = vector3(-34.63,-1676.08,29.49),
+        spawnpos = vector3(-26.98,-1679.63,29.45),
+        spawnHeading = 112.71,
+        blips = {
+            type = 225,
+            color = 1,
+            scale = 1.0
+        },
+        cars = {
+            {
+                name = "burrito",
+                label = "Van",
+                price = 15600,
+                coord = vector3(-52.058,-1693.59,28.49),
+                heading = 7.40
+            },
+        }
+    },
+    {
+        name = "Bike Store",
+        coords = vector3(-141.49,6354.39,31.49),
+        spawnpos = vector3(-141.17,6353.34,31.49),
+        spawnHeading = 112.71,
+        blips = {
+            type = 226,
+            color = 1,
+            scale = 1.0
+        },
+        cars = {
+            {
+                name = "akuma",
+                label = "Akuma",
+                price = 12400,
+                coord = vector3(-155.17,6357.63,30.49),
+                heading = 266.27
+            },
+        }
+    },
+   }
+
+
    ```
 3. add the staring command to your server.cfg
    ```cfg
-   start lp_speedcamera
+   start lp_cardealer
    ```
 It is recommended to use a billing system.
 -> esx_billing
@@ -171,28 +193,5 @@ It is recommended to use a billing system.
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage to create / delete mobile speed camera
-1. Type ```lua /spccreate SpeedCameraName MaxKmH  ``` create a new Mobile speed camera..
-Type ```lua /spcdelete SpeedCameraName ``` to remove an existing Mobile speed camera..
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- CONTRIBUTING 
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
--->

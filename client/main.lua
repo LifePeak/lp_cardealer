@@ -252,7 +252,7 @@ function buycar(colorveh)
                 else
                     TriggerEvent("lifepeak.notify", 'car', _U("ShopName"), _U("NotMoney"), "inverted red", true, "top right", 10000, 'error.mp3')
                 end
-            end, v.name,v.price, generatedPlate,colorveh, v.spawnpos)
+            end, v.name,v.price, generatedPlate,colorveh, v.spawnpos, v.spawnHeading)
         end
     end
 end
@@ -278,8 +278,6 @@ function Draw3DText(params)
                     SetTextFont(params.text.font or default.text.font)
                     SetTextProportional(true)
                     SetTextColour(params.text.rgb[1], params.text.rgb[2], params.text.rgb[3], 255)
-                    --SetTextDropshadow(0, 0, 0, 0, 255)
-                    --SetTextEdge(2, 0, 0, 0, 150)
                     if (params.text.textOutline) == true then SetTextOutline() end;
                     SetTextEntry("STRING")
                     SetTextCentre(true)
