@@ -41,23 +41,23 @@ Config.CarDealer = {
                 heading = 28.69
             },
             {
-                name = "kanjo",
-                label = "Kanjo",
-                price = 6000,
+                name = "neon",
+                label = "Neon",
+                price = 60000,
                 coord = vector3(-59.21,-1686.32,28.49),
                 heading = 248.44
             },
             {
-                name = "asbo",
-                label = "Asbo",
-                price = 4000,
+                name = "panto",
+                label = "Panto",
+                price = 7500,
                 coord = vector3(-56.53,-1683.42,28.49),
                 heading = 248.87
             },
             {
-                name = "issi2",
-                label = "Issi",
-                price = 10000,
+                name = "adder",
+                label = "Adder",
+                price = 100000,
                 coord = vector3(-52.79,-1679.33,28.41),
                 heading = 246.20
             },

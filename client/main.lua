@@ -96,7 +96,9 @@ Citizen.CreateThread(function()
 			car = vv
             
 			local vehicle = CreateVehicle(GetHashKey(car.name), car.coord, car.heading, false, false)
+            local onground = SetVehicleOnGroundProperly(vehicle)
             Citizen.Wait(3000)
+            --print(onground)
             SetVehicleRadioEnabled(vehicle, false)
             SetEntityInvincible(vehicle, true)
             SetDisableVehicleWindowCollisions(vehicle,true)
@@ -108,6 +110,7 @@ Citizen.CreateThread(function()
             SetVehicleDirtLevel(vehicle, 0.0)
             SetEntityCanBeDamaged(vehicle,false)
             SetVehicleFixed(vehicle)
+            
 			while not DoesEntityExist(vehicle) do
 				Citizen.Wait(0)
 			end
